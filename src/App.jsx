@@ -8,13 +8,14 @@ function App() {
   const [data, setData] = useState(null);
 
   async function fetchWeather() {
-    if (!city) return;
-    const res = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
-    );
-    const json = await res.json();
-    setData(json);
-  }
+  if (!city) return;
+  const res = await fetch(
+    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+  );
+  const json = await res.json();
+  setData(json);
+}
+
 
   return (
     <div className="app">
@@ -27,15 +28,18 @@ function App() {
       />
       <button onClick={fetchWeather}>Search</button>
 
-      {data && data.main ? (
-        <div className="card">
-          <h2>{data.name}</h2>
-          <p>{data.weather[0].description}</p>
-          <p>🌡 {data.main.temp} °C</p>
-        </div>
-      ) : (
-        data && <p>City not found</p>
-      )}
+      {data ? (
+  data.cod === 200 ? (
+    <div className="card">
+      <h2>{data.name}</h2>
+      <p>{data.weather[0].description}</p>
+      <p>🌡 {data.main.temp} °C</p>
+    </div>
+  ) : (
+    <p>{data.message}</p>
+  )
+) : null}
+
     </div>
   );
 }
