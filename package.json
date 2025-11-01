@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Adarshsingh251.github.io/react-tooling-demo",
+  "homepage": "https://adarshsingh251.github.io/react-tooling-demo",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
