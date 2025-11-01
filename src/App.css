@@ -4,6 +4,7 @@
   padding: 2rem;
   background: linear-gradient(180deg, #e0f2fe, #ffffff);
   min-height: 100vh;
+  color: black;
 }
 
 input {
@@ -28,4 +29,5 @@ button {
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  color: black;
 }
